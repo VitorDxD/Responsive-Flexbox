@@ -1,0 +1,148 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: #D0B792
+}
+#navegation{
+    display: flex;
+    height: 80px;
+    width: 100%;
+    background-color: #4F583D;
+    justify-content: space-between;
+}
+#logo{
+    color: rgb(230, 230, 230);
+    display: flex;
+    align-items: center;
+    font-size: 2.4rem;
+    margin: 20px;
+    text-transform: uppercase;
+}
+#options{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navItem{
+    color: rgb(230, 230, 230);
+    font-size: 2.4rem;
+    margin: 20px 10px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+.navItem:hover{
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10%;
+}
+footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 90px; 
+    background-color: #4F583D;
+}
+#github{
+    height: 5rem;
+}
+.square{
+    background-color: #85855F;
+    min-width: 200px;
+    min-height: 200px;
+    margin: 30px;
+}
+.square:hover{
+    cursor: pointer;
+    border-radius: 10%;
+    scale: 1.2;
+    transition: 0.3s;
+}
+#container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+#btnMenu{
+    display: none;
+}
+@media (max-width: 450px){
+
+    li{
+        font-size: 3rem;
+        margin: 20px;
+    }
+    #btnMenu{
+        position: absolute;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin: 20px;
+        width: 30px;
+        height: 20px;
+    }
+    .line{
+        height: 2px;
+        width: 30px;
+        background-color: rgb(230, 230, 230);
+        transition: 300ms;
+    }
+    #cabecalho.active #navegation #btnMenu #line-1{
+        transform-origin: 0% 0%;
+        transform: rotate(45deg);
+    }
+    #cabecalho.active #navegation #btnMenu #line-2{
+        background-color: transparent;
+        transform: rotate(45deg);
+    }
+    #cabecalho.active #navegation #btnMenu #line-3{
+        position: absolute;
+        top: 20px;
+        transform-origin: 0% 100%;
+        transform: rotate(-45deg);
+    }
+    #navegation{
+        align-items: center;
+    }
+    #options{
+        justify-content: flex-start;
+        display: block;
+        text-align: center;
+        visibility: hidden;
+        position: absolute;
+        top: 79px;
+        height: 0px;
+        width: 100%;
+        background-color: #4F583D;
+        transition: 0.6s;
+        overflow: hidden;
+        overflow-y: auto;
+    }
+    #cabecalho.active #navegation{
+        position: fixed;
+        top: 0;
+    }
+    #cabecalho.active #navegation #options{
+        display: block;
+        visibility: visible;
+        position: fixed;
+        top: 79px; 
+        height: calc(100vh - 80px);
+        width: 100%;
+        background-color: #4F583D;
+    }
+    #cabecalho.active ~ main #container:first-child{
+        margin-top: 80px;
+    }
+    #cabecalho.active + main #container.hidden{
+        display: none;
+    }
+
+}
